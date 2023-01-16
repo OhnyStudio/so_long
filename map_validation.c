@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/12 11:03:50 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/16 13:00:12 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ int	check_map(char *map_file, t_game *game)
 			{
 				find_exit(map_file, game);
 				find_player(map_file, game);
+				find_wall(map_file, game);
 				set_game_size(game);
 				find_collectible(map_file, game);
 				set_map(map_file, game);

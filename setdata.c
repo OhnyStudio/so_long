@@ -116,6 +116,35 @@ void	find_exit(char *map_file, t_game *game)
 	close(fd);
 }
 
+void	find_wall(char *map_file, t_game *game)
+{
+	int		cpt[3];
+	int		fd;
+	char	*temp;
+
+	cpt[0] = 0;
+	cpt[2] = 0;
+	fd = open(map_file, O_RDONLY);
+	while (cpt[0] < game->map_row)
+	{
+		temp = get_next_line(fd);
+		cpt[1] = 0;
+		while (cpt[1] < game->map_col)
+		{
+			if (temp[cpt[1]] == 'C')
+			{
+				game->wall_col[cpt[2]] = cpt[1];
+				game->wall_row[cpt[2]] = cpt[0];
+				cpt[2]++;
+			}
+			cpt[1]++;
+		}
+		cpt[0]++;
+	}
+	free (temp);
+	close(fd);
+}
+
 void	set_game_size(t_game *game)
 {
 	int	i;

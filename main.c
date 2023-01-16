@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:00:05 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/12 11:05:28 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/16 13:01:26 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,19 @@ void	init_game(t_game *game)
 
 int32_t	main(int argc, char **argv)
 {
-	t_game		game;
-	mlx_t		*mlx;
-	mlx_image_t	*door;
-	mlx_image_t	*collect[100];
-	mlx_image_t	*wall[100];
-	int			i;
+	t_game			game;
+	mlx_t			*mlx;
+	mlx_image_t		*door;
+	mlx_image_t		*collect[100];
+	mlx_image_t		*wall[1000];
+	mlx_texture_t	*perso;
+	mlx_texture_t	*db;
+	mlx_texture_t	*shenron;
+	int				i;
 
+	perso = mlx_load_png("goku.png");
+	db = mlx_load_png("Dragon_ball.png");
+	shenron = mlx_load_png("Shenron.png");
 	init_game(&game);
 	if (argc == 2)
 	{
@@ -68,9 +74,20 @@ int32_t	main(int argc, char **argv)
 			{
 				collect[i] = mlx_new_image(mlx, 64, 64);
 				memset(collect[i]->pixels, 200, collect[i]->width * collect[i]->height * sizeof(int));
+				collect[i] = mlx_texture_to_image(mlx, db);
 				mlx_image_to_window(mlx, collect[i], (game.collectible_col[i]) * 64, (game.collectible_row[i] + 1) * 64);
 				i++;
 			}
+			while (i < game.map_collectible)
+			{
+				collect[i] = mlx_new_image(mlx, 64, 64);
+				memset(collect[i]->pixels, 200, collect[i]->width * collect[i]->height * sizeof(int));
+				collect[i] = mlx_texture_to_image(mlx, db);
+				mlx_image_to_window(mlx, collect[i], (game.collectible_col[i]) * 64, (game.collectible_row[i] + 1) * 64);
+				i++;
+			}
+			g_img = mlx_texture_to_image(mlx, perso);
+			door = mlx_texture_to_image(mlx, shenron);
 			mlx_image_to_window(mlx, g_img, (game.player_col) * 64, (game.player_row + 1) * 64);
 			mlx_image_to_window(mlx, door, (game.exit_col) * 64, (game.exit_row + 1) * 64);
 			mlx_loop_hook(mlx, &hook, mlx);
