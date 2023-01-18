@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/16 13:00:12 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/17 20:57:35 by johnysavard      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,7 @@ static int	read_map(char *map_file, t_game *game)
 			if (i == 1)
 				game->map_col = ft_strlen(temp);
 			if (validate_rows(temp, i, game) == 0)
-			{
-				ft_putstr_fd("Validate Map Failed!", 1);
 				return (0);
-			}
 			i++;
 		}
 	}
@@ -116,14 +113,47 @@ static int	read_map(char *map_file, t_game *game)
 	return (1);
 }
 
-int	check_map(char *map_file, t_game *game)
+int	check_map_extension(char *map_file)
 {
 	int	len_name;
 
-	game->map_row = map_number_row(map_file);
 	len_name = ft_strlen(map_file);
 	if (map_file[len_name - 4] == '.' && map_file[len_name - 3] == 'b'
 		&& map_file[len_name - 2] == 'e' && map_file[len_name - 1] == 'r')
+	{
+		return (1);
+	}
+	return (0);
+}
+
+void test_wall(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	ft_putstr_fd("Col: ", 1);
+	ft_putnbr_fd(game->map_col, 1);
+	ft_putstr_fd("\nRow: ", 1);
+	ft_putnbr_fd(game->map_row, 1);
+	ft_putstr_fd("\nWall: ", 1);
+	ft_putnbr_fd(game->map_wall, 1);
+	ft_putstr_fd("\n", 1);
+	while (i < game->map_wall)
+	{
+		ft_putnbr_fd(i, 1);
+		ft_putstr_fd(" - Pos Wall: ", 1);
+		ft_putnbr_fd(game->wall_col[i], 1);
+		ft_putstr_fd(",", 1);
+		ft_putnbr_fd(game->wall_row[i] + 1, 1);
+		ft_putstr_fd("\n", 1);
+		i++;
+	}
+}
+
+int	check_map(char *map_file, t_game *game)
+{
+	game->map_row = map_number_row(map_file);
+	if (check_map_extension(map_file) != 0)
 	{
 		if (read_map(map_file, game) != 0)
 		{
@@ -132,14 +162,15 @@ int	check_map(char *map_file, t_game *game)
 			{
 				find_exit(map_file, game);
 				find_player(map_file, game);
-				find_wall(map_file, game);
 				set_game_size(game);
 				find_collectible(map_file, game);
-				set_map(map_file, game);
+				calcul_wall(map_file, game);
+				find_wall(map_file, game);
+				set_map(map_file, game);//Bug allocation de memoire
+				ft_putstr_fd("Third: ", 1);
+				test_wall(game);
 				if (find_path(game, 1, 1) != 0)
-				{
 					return (1);
-				}	
 			}
 		}
 	}
