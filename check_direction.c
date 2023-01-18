@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_direction.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:22:27 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/17 20:55:50 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/18 13:07:09 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
