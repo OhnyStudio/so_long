@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:24:13 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/17 19:58:59 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/18 16:13:14 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <memory.h>
-#include "MLX42/include/MLX42/MLX42.h"
-#include "get_next_line/get_next_line.h"
-#include "Libft/libft.h"
+#include "../MLX42/include/MLX42/MLX42.h"
+#include "../get_next_line/get_next_line.h"
+#include "../Libft/libft.h"
 
 typedef struct s_game
 {
@@ -39,6 +39,10 @@ typedef struct s_game
 	char	**maps;
 }	t_game;
 
+int		can_move_up(t_game *game);
+int		can_move_down(t_game *game);
+int		can_move_left(t_game *game);
+int		can_move_right(t_game *game);
 int		have_2(t_game *game, int i, int j);
 int		have_4(t_game *game, int i, int j);
 int		have_8(t_game *game, int i, int j);
@@ -54,5 +58,6 @@ void	find_collectible(char *map_file, t_game *game);
 void	set_map(char *map_file, t_game *game);
 void	set_game_size(t_game *game);
 void	check_direction(t_game *game);
-int		set_images(t_game *game);
+int		run_game(t_game *game);
 void	test_wall(t_game *game);
+void	set_player_image(mlx_t *mlx, t_game *game);

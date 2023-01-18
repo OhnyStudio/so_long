@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:00:05 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/17 20:31:20 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/18 14:45:42 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	{
 		if (check_map(argv[1], &game) != 0)
 		{
-			set_images(&game);
+			run_game(&game);
 		}
 		else
 		{
