@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:11:48 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/18 13:12:49 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/18 16:35:19 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "so_long.h"
 
 void	find_collectible(char *map_file, t_game *game)
 {
@@ -37,8 +37,6 @@ void	find_collectible(char *map_file, t_game *game)
 		}
 		cpt[0]++;
 	}
-	game->collectible_col[cpt[2]] = '\0';
-	game->collectible_row[cpt[2]] = '\0';
 	free (temp);
 	close(fd);
 }
@@ -125,8 +123,6 @@ void	find_wall(char *map_file, t_game *game)
 		}
 		cpt[0]++;
 	}
-	game->wall_col[cpt[2]] = 0;
-	game->wall_row[cpt[2]] = 0;
 	free (temp);
 	close(fd);
 }

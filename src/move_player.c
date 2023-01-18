@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:31:19 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/18 14:51:03 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/18 16:35:12 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "so_long.h"
 
 int	can_move_up(t_game *game)
 {

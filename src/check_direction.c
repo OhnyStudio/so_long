@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:22:27 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/18 13:07:09 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/18 16:35:22 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "so_long.h"
 
 int	have_2(t_game *game, int i, int j)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_validation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/17 20:57:35 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/18 16:35:15 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "so_long.h"
 
 static int	map_number_row(char *map_file)
 {

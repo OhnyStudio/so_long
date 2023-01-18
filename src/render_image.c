@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:44:05 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/18 16:13:59 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/18 16:35:06 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "so_long.h"
 
 mlx_image_t	*g_img;
 t_game		*game2;
@@ -60,8 +60,8 @@ int	run_game(t_game *game)
 {
 	mlx_t			*mlx;
 	mlx_image_t		*door;
-	mlx_image_t		*collect[100];
-	mlx_image_t		*wall[1000];
+	mlx_image_t		**collect;
+	mlx_image_t		**wall;
 	mlx_texture_t	*perso;
 	mlx_texture_t	*db;
 	mlx_texture_t	*shenron;
