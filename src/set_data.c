@@ -55,6 +55,8 @@ void	calcul_wall(char *map_file, t_game *game)
 		cpt[0]++;
 	}
 	game->map_wall = cpt[2];
+	game->wall = ft_calloc(sizeof(mlx_image_t *), game->map_wall);
+	game->collect = ft_calloc(sizeof(mlx_image_t *), game->map_collectible);
 	free (temp);
 	close(fd);
 }
@@ -82,4 +84,27 @@ void	set_game_size(t_game *game)
 		game->value_map[i] = ft_calloc(sizeof(int), game->map_col);
 		i++;
 	}
+}
+
+void	set_direction(t_game *game)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 1;
+	count = 0;
+	while (i < game->map_row)
+	{
+		j = 1;
+		while (j < game->map_col)
+		{
+			calcul_count_pos(game, &count, i, j);
+			game->value_map[i][j] = count;
+			j++;
+			count = 0;
+		}
+		i++;
+	}
+	game->value_map[i] = NULL;
 }

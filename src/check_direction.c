@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:22:27 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/18 16:35:22 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/18 17:04:52 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,38 +58,4 @@ int	have_16(t_game *game, int i, int j)
 		return (1);
 	}
 	return (0);
-}
-
-void	check_direction(t_game *game)
-{
-	int	i;
-	int	j;
-	int	count;
-
-	i = 1;
-	count = 0;
-	while (i < game->map_row)
-	{
-		j = 1;
-		while (j < game->map_col)
-		{
-			if (game->maps[i][j] == '0' || game->maps[i][j] == 'P'
-				|| game->maps[i][j] == 'E' || game->maps[i][j] == 'C')
-			{
-				if (game->maps[i - 1][j] != '1')
-					count += 2;
-				if (game->maps[i][j + 1] != '1')
-					count += 4;
-				if (game->maps[i + 1][j] != '1')
-					count += 8;
-				if (game->maps[i][j - 1] != '1')
-					count += 16;
-			}
-			game->value_map[i][j] = count;
-			j++;
-			count = 0;
-		}
-		i++;
-	}
-	game->value_map[i] = NULL;
 }

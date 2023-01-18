@@ -6,53 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:30:47 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/18 16:35:09 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/18 17:05:20 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	print_value_map(t_game *game)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < game->map_row)
-	{
-		j = 0;
-		while (j < game->map_col)
-		{
-			if (game->value_map[i][j] < 10)
-				ft_putstr_fd(" ", 1);
-			ft_putnbr_fd(game->value_map[i][j], 1);
-			ft_putstr_fd(" ", 1);
-			j++;
-		}
-		ft_putstr_fd("\n", 1);
-		i++;
-	}
-}
-
-void	print_map(t_game *game)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < game->map_row)
-	{
-		j = 0;
-		while (j < game->map_col)
-		{
-			ft_putchar_fd(game->maps[i][j], 1);
-			j++;
-		}
-		i++;
-	}
-	ft_putstr_fd("\n", 1);
-	print_value_map(game);
-}
 
 void	path_finding(t_game *game, int i, int j)
 {
@@ -103,7 +61,7 @@ int	check_if_collect_left(t_game *game)
 
 int	find_path(t_game *game, int i, int j)
 {
-	check_direction(game);
+	set_direction(game);
 	path_finding(game, game->player_row, game->player_col);
 	if (check_if_collect_left(game) != 0)
 	{
