@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/19 14:09:36 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:53:57 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_game
 }	t_game;
 
 int		run_game(t_game *game);
+int		find_path(t_game *game);
 int		can_move_up(t_game *game);
 int		can_move_down(t_game *game);
 int		can_move_left(t_game *game);
@@ -63,7 +64,6 @@ int		have_2(t_game *game, int i, int j);
 int		have_4(t_game *game, int i, int j);
 int		have_8(t_game *game, int i, int j);
 int		have_16(t_game *game, int i, int j);
-int		find_path(t_game *game, int i, int j);
 int		check_map(char *map_file, t_game *game);
 int		check_path(char *map_file, t_game *game);
 void	print_map(t_game *game);
@@ -78,7 +78,6 @@ void	find_floor(char *map_file, t_game *game);
 void	find_player(char *map_file, t_game *game);
 void	calcul_wall(char *map_file, t_game *game);
 void	calcul_floor(char *map_file, t_game *game);
-void	set_player_image(mlx_t *mlx, t_game *game);
 void	find_collectible(char *map_file, t_game *game);
 void	calcul_count_pos(t_game *game, int *count, int i, int j);
 #endif

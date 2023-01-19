@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:44:05 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/19 14:47:26 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:53:37 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ void	hook(void *param)
 		g_img->instances[0].x -= 64;
 	if (mlx_is_key_down(mlx, MLX_KEY_D) && can_move_right(game2))
 		g_img->instances[0].x += 64;
-}
-
-void	set_player_image(mlx_t *mlx, t_game *game)
-{
-	mlx_delete_image(mlx, g_img);
-	mlx_image_to_window(mlx, g_img, (game2->player_col) * 64, (game2->player_row + 1) * 64);
 }
 
 int	run_game(t_game *game)

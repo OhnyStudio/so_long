@@ -36,7 +36,6 @@ void	set_map(char *map_file, t_game *game)
 void	set_game_size(t_game *game)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	game->collectible_col = ft_calloc(sizeof(int), game->map_collectible + 1);

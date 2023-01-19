@@ -6,20 +6,20 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/19 14:06:02 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:53:02 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	validate_middle_rows(char *line, int row, t_game *game)
+static int	validate_middle_rows(char *line, t_game *game)
 {
 	int	i;
 
 	i = 0;
-	if (game->map_col == ft_strlen(line))
+	if (game->map_col == (int)ft_strlen(line))
 	{
-		while (i < ft_strlen(line) - 1)
+		while (i < (int)ft_strlen(line) - 1)
 		{
 			if (line[i] == 'P')
 				game->map_player++;
@@ -61,7 +61,7 @@ static int	validate_rows(char *line, int row, t_game *game)
 	}
 	else
 	{
-		if (validate_middle_rows(line, row, game) == 0)
+		if (validate_middle_rows(line, game) == 0)
 			return (0);
 	}
 	return (1);
@@ -126,7 +126,7 @@ int	check_map(char *map_file, t_game *game)
 				find_floor(map_file, game);
 				set_map(map_file, game);
 				print_wall(game);
-				if (find_path(game, 1, 1) != 0)
+				if (find_path(game) != 0)
 					return (1);
 			}
 		}

@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:30:47 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/18 17:05:20 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:52:20 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	check_if_collect_left(t_game *game)
 	return (1);
 }
 
-int	find_path(t_game *game, int i, int j)
+int	find_path(t_game *game)
 {
 	set_direction(game);
 	path_finding(game, game->player_row, game->player_col);
