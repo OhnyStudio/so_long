@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:00:05 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/18 16:34:57 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:21:05 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static void	init_game(t_game *game)
 	game->map_floor = 0;
 	game->map_player = 0;
 	game->map_wall = 0;
+	game->player_move = 0;
+	game->next_move = 0;
 }
 
 int	main(int argc, char **argv)

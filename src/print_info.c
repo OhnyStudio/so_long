@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_map.c                                        :+:      :+:    :+:   */
+/*   print_info.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 16:48:29 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/18 17:07:21 by jsavard          ###   ########.fr       */
+/*   Created: 2023/01/19 16:27:49 by jsavard           #+#    #+#             */
+/*   Updated: 2023/01/19 17:11:49 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	print_map(t_game *game)
 	print_value_map(game);
 }
 
-void print_wall(t_game *game)
+void	print_wall(t_game *game)
 {
 	int	i;
 
@@ -76,4 +76,17 @@ void print_wall(t_game *game)
 		ft_putstr_fd("\n", 1);
 		i++;
 	}
+}
+
+void	print_player_pos(t_game *game)
+{
+	ft_putstr_fd("Player Pos: ", 1);
+	ft_putnbr_fd(game->player_row, 1);
+	ft_putstr_fd(",", 1);
+	ft_putnbr_fd(game->player_col, 1);
+	ft_putstr_fd("\nPlayer movement: ", 1);
+	ft_putnbr_fd(game->player_move, 1);
+	ft_putstr_fd("\nCollectible left: ", 1);
+	ft_putnbr_fd(game->map_collectible, 1);
+	ft_putstr_fd("\n", 1);
 }

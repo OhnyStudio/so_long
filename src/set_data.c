@@ -38,8 +38,8 @@ void	set_game_size(t_game *game)
 	int	i;
 
 	i = 0;
-	game->collectible_col = ft_calloc(sizeof(int), game->map_collectible + 1);
-	game->collectible_row = ft_calloc(sizeof(int), game->map_collectible + 1);
+	game->collect_col = ft_calloc(sizeof(int), game->map_collectible + 1);
+	game->collect_row = ft_calloc(sizeof(int), game->map_collectible + 1);
 	game->wall_col = ft_calloc(sizeof(int), game->map_wall + 1);
 	game->wall_row = ft_calloc(sizeof(int), game->map_wall + 1);
 	game->floor_col = ft_calloc(sizeof(int), game->map_floor + 1);

@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:11:48 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/19 14:07:42 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 16:59:17 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	find_collectible(char *map_file, t_game *game)
 		{
 			if (temp[cpt[1]] == 'C')
 			{
-				game->collectible_col[cpt[2]] = cpt[1];
-				game->collectible_row[cpt[2]] = cpt[0];
+				game->collect_col[cpt[2]] = cpt[1];
+				game->collect_row[cpt[2]] = cpt[0];
 				cpt[2]++;
 			}
 			cpt[1]++;

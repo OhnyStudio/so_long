@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/19 14:53:57 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:13:34 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,24 @@ typedef struct s_game
 	int				exit_col;
 	int				exit_row;
 	int				map_floor;
+	int				next_move;
 	int				map_player;
 	int				player_col;
 	int				player_row;
+	int				player_move;
 	int				map_collectible;
 	int				*wall_col;
 	int				*wall_row;
 	int				*floor_col;
 	int				*floor_row;
-	int				*collectible_col;
-	int				*collectible_row;
+	int				*collect_col;
+	int				*collect_row;
 	int				**value_map;
 	char			**maps;
 	mlx_t			*mlx;
 	mlx_image_t		*door;
 	mlx_image_t		**wall;
+	mlx_image_t		*player;
 	mlx_image_t		**floor;
 	mlx_image_t		**collect;
 	mlx_texture_t	*db;
@@ -66,11 +69,15 @@ int		have_8(t_game *game, int i, int j);
 int		have_16(t_game *game, int i, int j);
 int		check_map(char *map_file, t_game *game);
 int		check_path(char *map_file, t_game *game);
+void	hook(void *params);
+void	can_exit(t_game *game);
 void	print_map(t_game *game);
 void	print_wall(t_game *game);
+void	collect_item(t_game *game);
 void	set_game_size(t_game *game);
 void	set_direction(t_game *game);
 void	print_value_map(t_game *game);
+void	print_player_pos(t_game *game);
 void	set_map(char *map_file, t_game *game);
 void	find_exit(char *map_file, t_game *game);
 void	find_wall(char *map_file, t_game *game);
