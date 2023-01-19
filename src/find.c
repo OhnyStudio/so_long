@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:11:48 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/18 16:35:19 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:07:42 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,4 +125,33 @@ void	find_wall(char *map_file, t_game *game)
 	}
 	free (temp);
 	close(fd);
+}
+
+void	find_floor(char *map_file, t_game *game)
+{
+	int		cpt[4];
+	char	*temp;
+
+	cpt[0] = 0;
+	cpt[2] = 0;
+	cpt[3] = open(map_file, O_RDONLY);
+	while (cpt[0] < game->map_row)
+	{
+		temp = get_next_line(cpt[3]);
+		cpt[1] = 0;
+		while (cpt[1] < game->map_col)
+		{
+			if (temp[cpt[1]] == '0' || temp[cpt[1]] == 'C'
+				|| temp[cpt[1]] == 'P' || temp[cpt[1]] == 'E')
+			{
+				game->floor_col[cpt[2]] = cpt[1];
+				game->floor_row[cpt[2]] = cpt[0];
+				cpt[2]++;
+			}
+			cpt[1]++;
+		}
+		cpt[0]++;
+	}
+	free (temp);
+	close(cpt[3]);
 }

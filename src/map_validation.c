@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/18 17:12:46 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:06:02 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,11 +118,13 @@ int	check_map(char *map_file, t_game *game)
 			{
 				find_exit(map_file, game);
 				find_player(map_file, game);
-				set_game_size(game);
 				calcul_wall(map_file, game);
+				calcul_floor(map_file, game);
+				set_game_size(game);
 				find_collectible(map_file, game);
 				find_wall(map_file, game);
-				set_map(map_file, game);//Bug allocation de memoire
+				find_floor(map_file, game);
+				set_map(map_file, game);
 				print_wall(game);
 				if (find_path(game, 1, 1) != 0)
 					return (1);
