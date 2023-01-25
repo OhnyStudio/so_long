@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_info.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:27:49 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/19 17:11:49 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/21 19:19:50 by johnysavard      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,7 @@ void	print_map(t_game *game)
 	i = 0;
 	while (i < game->map_row)
 	{
-		j = 0;
-		while (j < game->map_col)
-		{
-			ft_putchar_fd(game->maps[i][j], 1);
-			j++;
-		}
+		ft_putstr_fd(game->maps[i], 1);
 		i++;
 	}
 	ft_putstr_fd("\n", 1);

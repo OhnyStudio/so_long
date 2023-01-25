@@ -3,70 +3,82 @@
 /*                                                        :::      ::::::::   */
 /*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:31:19 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/19 17:13:54 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/20 10:15:43 by johnysavard      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	can_move_up(t_game *game)
+static int	can_move_up(t_game *game)
 {
-	if (game->maps[game->player_row - 1][game->player_col] != '1'
+	if ((game->maps[game->player_row - 1][game->player_col] == '0'
+		|| game->maps[game->player_row - 1][game->player_col] == 'C'
+		|| game->maps[game->player_row - 1][game->player_col] == 'P'
+		|| game->maps[game->player_row - 1][game->player_col] == 'E')
 		&& mlx_get_time() > game->next_move)
 	{
 		game->player_row -= 1;
 		game->player_move++;
 		collect_item(game);
-		can_exit(game);
 		print_player_pos(game);
+		can_exit(game);
 		return (1);
 	}
 	return (0);
 }
 
-int	can_move_down(t_game *game)
+static int	can_move_down(t_game *game)
 {
-	if (game->maps[game->player_row + 1][game->player_col] != '1'
+	if ((game->maps[game->player_row + 1][game->player_col] == '0'
+		|| game->maps[game->player_row + 1][game->player_col] == 'C'
+		|| game->maps[game->player_row + 1][game->player_col] == 'E'
+		|| game->maps[game->player_row + 1][game->player_col] == 'P')
 		&& mlx_get_time() > game->next_move)
 	{
 		game->player_row += 1;
 		game->player_move++;
 		collect_item(game);
-		can_exit(game);
 		print_player_pos(game);
+		can_exit(game);
 		return (1);
 	}
 	return (0);
 }
 
-int	can_move_left(t_game *game)
+static int	can_move_left(t_game *game)
 {
-	if (game->maps[game->player_row][game->player_col - 1] != '1'
+	if ((game->maps[game->player_row][game->player_col - 1] == '0'
+		|| game->maps[game->player_row][game->player_col - 1] == 'C'
+		|| game->maps[game->player_row][game->player_col - 1] == 'P'
+		|| game->maps[game->player_row][game->player_col - 1] == 'E')
 		&& mlx_get_time() > game->next_move)
 	{
 		game->player_col -= 1;
 		game->player_move++;
 		collect_item(game);
-		can_exit(game);
 		print_player_pos(game);
+		can_exit(game);
 		return (1);
 	}
 	return (0);
 }
 
-int	can_move_right(t_game *game)
+static int	can_move_right(t_game *game)
 {
-	if (game->maps[game->player_row][game->player_col + 1] != '1'
+	if ((game->maps[game->player_row][game->player_col + 1] == '0'
+		|| game->maps[game->player_row][game->player_col + 1] == 'C'
+		|| game->maps[game->player_row][game->player_col + 1] == 'E'
+		|| game->maps[game->player_row][game->player_col + 1] == 'P')
 		&& mlx_get_time() > game->next_move)
 	{
 		game->player_col += 1;
 		game->player_move++;
 		collect_item(game);
-		can_exit(game);
 		print_player_pos(game);
+		can_exit(game);
 		return (1);
 	}
 	return (0);

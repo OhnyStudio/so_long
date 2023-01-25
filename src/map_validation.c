@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/19 14:53:02 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/21 19:29:38 by johnysavard      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	validate_rows(char *line, int row, t_game *game)
 		len--;
 	if (row == 1 || row == game->map_row)
 	{
-		while (i <  len)
+		while (i < len)
 		{
 			if (line[i] != '1')
 				return (0);
@@ -93,7 +93,7 @@ static int	check_can_read_map(char *map_file, t_game *game)
 	return (1);
 }
 
-int	check_map_extension(char *map_file)
+static int	check_map_extension(char *map_file)
 {
 	int	len_name;
 
@@ -126,7 +126,7 @@ int	check_map(char *map_file, t_game *game)
 				find_floor(map_file, game);
 				set_map(map_file, game);
 				print_wall(game);
-				if (find_path(game) != 0)
+				if (path_finding(game) != 0)
 					return (1);
 			}
 		}

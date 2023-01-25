@@ -28,7 +28,8 @@ void	set_map(char *map_file, t_game *game)
 		game->maps[i] = temp;
 		i++;
 	}
-	game->maps[i] = "\0";
+	game->maps[i] = NULL;
+	temp = NULL;
 	free (temp);
 	close(fd);
 }

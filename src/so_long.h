@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/19 17:13:34 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/20 11:08:15 by johnysavard      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,9 @@ typedef struct s_game
 	mlx_texture_t	*floor_texture;
 }	t_game;
 
-int		run_game(t_game *game);
-int		find_path(t_game *game);
-int		can_move_up(t_game *game);
-int		can_move_down(t_game *game);
-int		can_move_left(t_game *game);
-int		can_move_right(t_game *game);
+int		render_game(t_game *game);
+int		path_finding(t_game *game);
 int		calcul_number_row(char *map_file);
-int		have_2(t_game *game, int i, int j);
-int		have_4(t_game *game, int i, int j);
-int		have_8(t_game *game, int i, int j);
-int		have_16(t_game *game, int i, int j);
 int		check_map(char *map_file, t_game *game);
 int		check_path(char *map_file, t_game *game);
 void	hook(void *params);
@@ -86,5 +78,6 @@ void	find_player(char *map_file, t_game *game);
 void	calcul_wall(char *map_file, t_game *game);
 void	calcul_floor(char *map_file, t_game *game);
 void	find_collectible(char *map_file, t_game *game);
+void	check_all_direction(t_game *game, int i, int j);
 void	calcul_count_pos(t_game *game, int *count, int i, int j);
 #endif
