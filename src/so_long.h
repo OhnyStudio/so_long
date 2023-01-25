@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/25 14:27:54 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/25 14:37:16 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <memory.h>
+# include <fcntl.h>
 # include "../MLX42/include/MLX42/MLX42.h"
-# include "../get_next_line/get_next_line.h"
-# include "../Libft/libft.h"
+# include "../libft/libft.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_game
 {
@@ -56,6 +60,7 @@ typedef struct s_game
 	mlx_texture_t	*floor_texture;
 }	t_game;
 
+char	*get_next_line(int fd);
 int		render_game(t_game *game);
 int		path_finding(t_game *game);
 int		calcul_number_row(char *map_file);
