@@ -1,12 +1,23 @@
 NAME		=	so_long
 CC			=	gcc
 FLAGS		=	-Wall -Wextra -Werror
-MLX42			=	MLX42/Makefile.gen
+MLX42		=	MLX42/Makefile.gen
 LFT			=	libft/libft.a
 INC			=	-I ./inc -I ./libft -I ./MLX42
 LIB			=	-L ./libft -lft -L ./MLX42 -lMLX42 -lXext -lX11 -lm -lbsd
 OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
-SRC			=	src/so_long \
+SRC			=	src/so_long.c \
+				src/calcul.c \
+				src/check_direction.c \
+				src/collect_exit.c \
+				src/find.c \
+				src/get_next_line.c \
+				src/map_validation.c \
+				src/move_player.c \
+				src/path_finding.c \
+				src/print_info.c \
+				src/render_image.c \
+				src/set_data.c \
 
 all:		$(MLX42) $(LFT) obj $(NAME)
 
@@ -41,5 +52,3 @@ fclean:		clean
 			@echo "binary file removed."
 
 re:			fclean all
-
-.PHONY:		all clean fclean re

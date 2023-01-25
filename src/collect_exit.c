@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   collect_exit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:24:15 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/20 10:06:07 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/25 15:20:57 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ void	can_exit(t_game *game)
 	if (game->map_collectible == 0
 		&& game->maps[game->player_row][game->player_col] == 'E')
 	{
-		ft_putstr_fd("Win !\n", 1);
+		ft_putstr_fd("Win! In ", 1);
+		ft_putnbr_fd(game->player_move, 1);
+		ft_putstr_fd(" movement!\n", 1);
+		game->game_finish = 1;
 	}
 }

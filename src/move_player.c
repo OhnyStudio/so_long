@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:31:19 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/20 10:15:43 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/25 15:23:02 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	can_move_up(t_game *game)
 		|| game->maps[game->player_row - 1][game->player_col] == 'C'
 		|| game->maps[game->player_row - 1][game->player_col] == 'P'
 		|| game->maps[game->player_row - 1][game->player_col] == 'E')
-		&& mlx_get_time() > game->next_move)
+		&& mlx_get_time() > game->next_move && game->game_finish != 1)
 	{
 		game->player_row -= 1;
 		game->player_move++;
@@ -36,7 +36,7 @@ static int	can_move_down(t_game *game)
 		|| game->maps[game->player_row + 1][game->player_col] == 'C'
 		|| game->maps[game->player_row + 1][game->player_col] == 'E'
 		|| game->maps[game->player_row + 1][game->player_col] == 'P')
-		&& mlx_get_time() > game->next_move)
+		&& mlx_get_time() > game->next_move && game->game_finish != 1)
 	{
 		game->player_row += 1;
 		game->player_move++;
@@ -54,7 +54,7 @@ static int	can_move_left(t_game *game)
 		|| game->maps[game->player_row][game->player_col - 1] == 'C'
 		|| game->maps[game->player_row][game->player_col - 1] == 'P'
 		|| game->maps[game->player_row][game->player_col - 1] == 'E')
-		&& mlx_get_time() > game->next_move)
+		&& mlx_get_time() > game->next_move && game->game_finish != 1)
 	{
 		game->player_col -= 1;
 		game->player_move++;
@@ -72,7 +72,7 @@ static int	can_move_right(t_game *game)
 		|| game->maps[game->player_row][game->player_col + 1] == 'C'
 		|| game->maps[game->player_row][game->player_col + 1] == 'E'
 		|| game->maps[game->player_row][game->player_col + 1] == 'P')
-		&& mlx_get_time() > game->next_move)
+		&& mlx_get_time() > game->next_move && game->game_finish != 1)
 	{
 		game->player_col += 1;
 		game->player_move++;

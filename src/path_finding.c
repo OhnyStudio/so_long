@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_finding.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:30:47 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/20 11:07:32 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/25 15:12:27 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,6 @@ int	path_finding(t_game *game)
 	set_direction(game);
 	check_all_direction(game, game->player_row, game->player_col);
 	if (check_if_collect_left(game) != 0)
-	{
-		print_map(game);
 		return (1);
-	}
-	print_map(game);
 	return (0);
 }

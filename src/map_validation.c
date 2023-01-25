@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/25 14:19:37 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/25 15:11:18 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,6 @@ int	check_map(char *map_file, t_game *game)
 				find_wall(map_file, game);
 				find_floor(map_file, game);
 				set_map(map_file, game);
-				print_wall(game);
 				if (path_finding(game) != 0)
 					return (1);
 			}
