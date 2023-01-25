@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/21 19:29:38 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/25 14:19:37 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static int	validate_middle_rows(char *line, t_game *game)
 	int	i;
 
 	i = 0;
-	if (game->map_col == (int)ft_strlen(line))
+	if (game->map_col == (int)ft_strlen(line) - 1)
 	{
-		while (i < (int)ft_strlen(line) - 1)
+		while (i < game->map_col)
 		{
 			if (line[i] == 'P')
 				game->map_player++;
@@ -35,7 +35,7 @@ static int	validate_middle_rows(char *line, t_game *game)
 				return (0);
 			i++;
 		}
-		if (line[0] == '1' && line[game->map_col - 2] == '1')
+		if (line[0] == '1' && line[game->map_col - 1] == '1')
 			return (1);
 	}
 	return (0);
@@ -47,10 +47,8 @@ static int	validate_rows(char *line, int row, t_game *game)
 	int	len;
 
 	i = 0;
-	len = ft_strlen(line);
-	if (row == 1)
-		len--;
-	if (row == 1 || row == game->map_row)
+	len = game->map_col;
+	if (row == 0 || row == (game->map_row - 1))
 	{
 		while (i < len)
 		{
@@ -73,16 +71,16 @@ static int	check_can_read_map(char *map_file, t_game *game)
 	int		fd;
 	char	*temp;
 
-	i = 1;
+	i = 0;
 	fd = open(map_file, O_RDONLY);
-	temp = "first";
+	temp = "";
 	while (temp)
 	{
 		temp = get_next_line(fd);
 		if (temp)
 		{
-			if (i == 1)
-				game->map_col = ft_strlen(temp);
+			if (i == 0)
+				game->map_col = ft_strlen(temp) - 1;
 			if (validate_rows(temp, i, game) == 0)
 				return (0);
 			i++;

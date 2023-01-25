@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/20 11:08:15 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/25 14:27:54 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int		path_finding(t_game *game);
 int		calcul_number_row(char *map_file);
 int		check_map(char *map_file, t_game *game);
 int		check_path(char *map_file, t_game *game);
+int		calcul_count_pos(t_game *game, int i, int j);
 void	hook(void *params);
 void	can_exit(t_game *game);
 void	print_map(t_game *game);
@@ -79,5 +80,4 @@ void	calcul_wall(char *map_file, t_game *game);
 void	calcul_floor(char *map_file, t_game *game);
 void	find_collectible(char *map_file, t_game *game);
 void	check_all_direction(t_game *game, int i, int j);
-void	calcul_count_pos(t_game *game, int *count, int i, int j);
 #endif

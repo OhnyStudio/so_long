@@ -64,16 +64,14 @@ void	set_direction(t_game *game)
 	int	count;
 
 	i = 1;
-	count = 0;
 	while (i < game->map_row)
 	{
 		j = 1;
 		while (j < game->map_col)
 		{
-			calcul_count_pos(game, &count, i, j);
+			count = calcul_count_pos(game, i, j);
 			game->value_map[i][j] = count;
 			j++;
-			count = 0;
 		}
 		i++;
 	}

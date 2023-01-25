@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_info.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:27:49 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/21 19:19:50 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/25 13:42:11 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	print_value_map(t_game *game)
 void	print_map(t_game *game)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (i < game->map_row)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calcul.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:10:17 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/20 10:04:52 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/25 14:27:57 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ int	calcul_number_row(char *map_file)
 	return (i);
 }
 
-void	calcul_count_pos(t_game *game, int *count, int i, int j)
+int	calcul_count_pos(t_game *game, int i, int j)
 {
+	int	count;
+
+	count = 0;
 	if (game->maps[i][j] == '0' || game->maps[i][j] == 'P'
 				|| game->maps[i][j] == 'E' || game->maps[i][j] == 'C')
 	{
@@ -46,6 +49,7 @@ void	calcul_count_pos(t_game *game, int *count, int i, int j)
 		if (game->maps[i][j - 1] != '1')
 			count += 16;
 	}
+	return (count);
 }
 
 void	calcul_wall(char *map_file, t_game *game)

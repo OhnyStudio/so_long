@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_image.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:44:05 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/20 11:08:08 by johnysavard      ###   ########.fr       */
+/*   Updated: 2023/01/25 14:10:35 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	set_collectibles(t_game *game)
 int	render_game(t_game *game)
 {
 	set_texture(game);
-	game->mlx = mlx_init((64 * (game->map_col - 1)),
+	game->mlx = mlx_init((64 * game->map_col),
 			(64 * (game->map_row + 1)), "MLX42", true);
 	if (!game->mlx)
 		exit(EXIT_FAILURE);
