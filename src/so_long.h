@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/25 15:20:15 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/25 17:08:30 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ typedef struct s_game
 	int				**value_map;
 	char			**maps;
 	mlx_t			*mlx;
+	mlx_image_t		*txt_collect_count;
+	mlx_image_t		*txt_collect;
+	mlx_image_t		*txt_move_count;
+	mlx_image_t		*txt_move;
 	mlx_image_t		*door;
 	mlx_image_t		**wall;
 	mlx_image_t		*player;
@@ -76,7 +80,7 @@ void	collect_item(t_game *game);
 void	set_game_size(t_game *game);
 void	set_direction(t_game *game);
 void	print_value_map(t_game *game);
-void	print_player_pos(t_game *game);
+void	print_player_move(t_game *game);
 void	set_map(char *map_file, t_game *game);
 void	find_exit(char *map_file, t_game *game);
 void	find_wall(char *map_file, t_game *game);

@@ -6,11 +6,27 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:27:49 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/25 13:42:11 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/25 17:10:50 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	set_player_info(t_game *game)
+{
+	game->txt_collect = mlx_new_image(game->mlx, 20, 180);
+	game->txt_collect_count = mlx_new_image(game->mlx, 20, 180);
+	game->txt_move = mlx_new_image(game->mlx, 20, 180);
+	game->txt_move_count = mlx_new_image(game->mlx, 20, 180);
+	game->txt_move = mlx_put_string(game->mlx,
+			"Player movement: ", 10, game->map_row * 64);
+	game->txt_collect = mlx_put_string(game->mlx,
+			"Collectible: ", 10, game->map_row * 64 + 20);
+	game->txt_collect_count = mlx_put_string(game->mlx,
+			ft_itoa(game->player_move), 200, game->map_row * 64);
+	game->txt_move_count = mlx_put_string(game->mlx,
+			ft_itoa(game->map_collectible), 200, game->map_row * 64 + 20);
+}
 
 void	print_value_map(t_game *game)
 {
@@ -72,15 +88,20 @@ void	print_wall(t_game *game)
 	}
 }
 
-void	print_player_pos(t_game *game)
+
+
+void	print_player_move(t_game *game)
 {
-	ft_putstr_fd("Player Pos: ", 1);
-	ft_putnbr_fd(game->player_row, 1);
-	ft_putstr_fd(",", 1);
-	ft_putnbr_fd(game->player_col, 1);
-	ft_putstr_fd("\nPlayer movement: ", 1);
-	ft_putnbr_fd(game->player_move, 1);
-	ft_putstr_fd("\nCollectible left: ", 1);
-	ft_putnbr_fd(game->map_collectible, 1);
-	ft_putstr_fd("\n", 1);
+	if (game->player_move == 0)
+	{
+		set_player_info(game);
+	}
+	else
+	{
+		mlx_delete_image(game->mlx, game->txt_collect);
+		mlx_delete_image(game->mlx, game->txt_collect_count);
+		mlx_delete_image(game->mlx, game->txt_move);
+		mlx_delete_image(game->mlx, game->txt_move_count);
+		set_player_info(game);
+	}
 }

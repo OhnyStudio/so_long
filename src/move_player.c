@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:31:19 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/25 15:23:02 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/25 16:41:14 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	can_move_up(t_game *game)
 		game->player_row -= 1;
 		game->player_move++;
 		collect_item(game);
-		print_player_pos(game);
+		print_player_move(game);
 		can_exit(game);
 		return (1);
 	}
@@ -41,7 +41,7 @@ static int	can_move_down(t_game *game)
 		game->player_row += 1;
 		game->player_move++;
 		collect_item(game);
-		print_player_pos(game);
+		print_player_move(game);
 		can_exit(game);
 		return (1);
 	}
@@ -59,7 +59,7 @@ static int	can_move_left(t_game *game)
 		game->player_col -= 1;
 		game->player_move++;
 		collect_item(game);
-		print_player_pos(game);
+		print_player_move(game);
 		can_exit(game);
 		return (1);
 	}
@@ -77,7 +77,7 @@ static int	can_move_right(t_game *game)
 		game->player_col += 1;
 		game->player_move++;
 		collect_item(game);
-		print_player_pos(game);
+		print_player_move(game);
 		can_exit(game);
 		return (1);
 	}

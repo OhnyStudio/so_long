@@ -1,10 +1,10 @@
 NAME		=	so_long
 CC			=	gcc
 FLAGS		=	-Wall -Wextra -Werror
-MLX42		=	MLX42/Makefile.gen
+MLX42		=	MLX42/Makefile
 LFT			=	libft/libft.a
-INC			=	-I ./inc -I ./libft -I ./MLX42
-LIB			=	-L ./libft -lft -L ./MLX42 -lMLX42 -lXext -lX11 -lm -lbsd
+INC			=	-I libft/
+LIB			=	libft/ -framework Cocoa -framework OpenGL -framework IOKit
 OBJ			=	$(patsubst src%, obj%, $(SRC:.c=.o))
 SRC			=	src/so_long.c \
 				src/calcul.c \
