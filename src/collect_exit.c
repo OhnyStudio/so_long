@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   collect_exit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:24:15 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/25 17:13:20 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/25 22:21:19 by johnysavard      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ void	can_exit(t_game *game)
 	if (game->map_collectible == 0
 		&& game->maps[game->player_row][game->player_col] == 'E')
 	{
-		mlx_put_string(game->mlx, "You have Win in ", 400, game->map_row * 64);
+		mlx_put_string(game->mlx, "You Won in ", 10, game->map_row * 64 + 40);
 		game->txt_move = mlx_put_string(game->mlx,
-				ft_itoa(game->player_move), 400, game->map_row * 64);
+				ft_itoa(game->player_move), 120, game->map_row * 64 + 40);
 		game->game_finish = 1;
+		mlx_put_string(game->mlx,
+			" moves! Close to restart!", 140, game->map_row * 64 + 40);
 	}
 }

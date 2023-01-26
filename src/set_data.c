@@ -15,12 +15,10 @@
 void	set_map(char *map_file, t_game *game)
 {
 	int		i;
-	int		j;
 	int		fd;
 	char	*temp;
 
 	i = 0;
-	j = 0;
 	fd = open(map_file, O_RDONLY);
 	while (i < game->map_row)
 	{
