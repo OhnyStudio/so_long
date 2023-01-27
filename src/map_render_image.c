@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_image.c                                     :+:      :+:    :+:   */
+/*   map_render_image.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:44:05 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/25 16:59:02 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 09:42:48 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int	render_game(t_game *game)
 	game->mlx = mlx_init(64 * game->map_col,
 			64 * (game->map_row + 1), "MLX42", true);
 	print_player_move(game);
+	mlx_set_window_title(game->mlx, "So Long Dragon Ball");
 	if (!game->mlx)
 		exit(EXIT_FAILURE);
 	set_player_exit(game);

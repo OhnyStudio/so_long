@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/25 17:08:30 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 09:41:54 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,13 @@ typedef struct s_game
 
 char	*get_next_line(int fd);
 int		render_game(t_game *game);
-int		path_finding(t_game *game);
+int		player_can_finish(t_game *game);
 int		calcul_number_row(char *map_file);
 int		check_map(char *map_file, t_game *game);
 int		check_path(char *map_file, t_game *game);
 int		calcul_count_pos(t_game *game, int i, int j);
 void	hook(void *params);
 void	can_exit(t_game *game);
-void	print_map(t_game *game);
-void	print_wall(t_game *game);
 void	collect_item(t_game *game);
 void	set_game_size(t_game *game);
 void	set_direction(t_game *game);

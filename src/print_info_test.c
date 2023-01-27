@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:27:49 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/25 17:10:50 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 09:08:43 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,23 +85,5 @@ void	print_wall(t_game *game)
 		ft_putnbr_fd(game->wall_row[i] + 1, 1);
 		ft_putstr_fd("\n", 1);
 		i++;
-	}
-}
-
-
-
-void	print_player_move(t_game *game)
-{
-	if (game->player_move == 0)
-	{
-		set_player_info(game);
-	}
-	else
-	{
-		mlx_delete_image(game->mlx, game->txt_collect);
-		mlx_delete_image(game->mlx, game->txt_collect_count);
-		mlx_delete_image(game->mlx, game->txt_move);
-		mlx_delete_image(game->mlx, game->txt_move_count);
-		set_player_info(game);
 	}
 }

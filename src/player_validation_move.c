@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   collect_exit.c                                     :+:      :+:    :+:   */
+/*   player_validation_move.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: johnysavard <johnysavard@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 16:24:15 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 08:58:43 by johnysavard      ###   ########.fr       */
+/*   Created: 2023/01/27 09:43:47 by jsavard           #+#    #+#             */
+/*   Updated: 2023/01/27 09:43:48 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,38 @@ static void	delete_db_image(t_game	*game)
 		}
 		i++;
 	}
+}
+
+static int	check_if_collect_left(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < game->map_row)
+	{
+		j = 0;
+		while (j < game->map_col)
+		{
+			if (game->value_map[i][j] > 0)
+			{
+				if (game->maps[i][j] == 'C' || game->maps[i][j] == 'C')
+					return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	player_can_finish(t_game *game)
+{
+	set_direction(game);
+	check_all_direction(game, game->player_row, game->player_col);
+	if (check_if_collect_left(game) != 0)
+		return (1);
+	return (0);
 }
 
 void	collect_item(t_game *game)
