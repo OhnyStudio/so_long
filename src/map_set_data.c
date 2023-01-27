@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:59 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 13:08:42 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 15:09:23 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ void	set_map(char *map_file, t_game *game)
 
 	i = 0;
 	fd = open(map_file, O_RDONLY);
+	temp = "";
 	while (i < game->map_row)
 	{
 		temp = get_next_line(fd);
-		game->maps[i] = temp;
+		ft_strlcpy(game->maps[i], temp, game->map_col);
 		i++;
+		free(temp);
 	}
-	game->maps[i] = NULL;
 	close(fd);
 }
 
@@ -50,7 +51,7 @@ void	set_game_size(t_game *game)
 		game->maps[i++] = ft_calloc(sizeof(char), game->map_col + 1);
 	i = 0;
 	while (i < game->map_row)
-		game->value_map[i++] = ft_calloc(sizeof(int), game->map_col);
+		game->value_map[i++] = ft_calloc(sizeof(int), game->map_col + 1);
 }
 
 void	set_direction(t_game *game)

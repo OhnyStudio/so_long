@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 10:52:28 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 14:49:17 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ typedef struct s_game
 	mlx_image_t		*txt_move_count;
 	mlx_image_t		*txt_move;
 	mlx_image_t		*door;
-	mlx_image_t		**wall;
 	mlx_image_t		*player;
+	mlx_image_t		**wall;
 	mlx_image_t		**floor;
 	mlx_image_t		**collect;
 	mlx_texture_t	*db;

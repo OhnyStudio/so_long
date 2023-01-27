@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:43:47 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 12:42:33 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 14:29:40 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,21 @@ void	collect_item(t_game *game)
 
 void	can_exit(t_game *game)
 {
-	char	*temp;
+	char		*temp;
+	mlx_image_t	*temp_image_1;
+	mlx_image_t	*temp_image_2;
 
 	if (game->map_collectible == 0
 		&& game->maps[game->player_row][game->player_col] == 'E')
 	{
-		mlx_put_string(game->mlx, "You Won in ", 10, game->map_row * 64 + 40);
+		temp_image_1 = mlx_put_string(game->mlx, 
+				"You Won in ", 10, game->map_row * 64 + 40);
 		temp = ft_itoa(game->player_move);
 		game->txt_move = mlx_put_string(game->mlx,
 				temp, 120, game->map_row * 64 + 40);
 		free(temp);
 		game->game_finish = 1;
-		mlx_put_string(game->mlx,
-			" moves! Close to restart!", 140, game->map_row * 64 + 40);
+		temp_image_2 = mlx_put_string(game->mlx,
+				" moves! Close to restart!", 140, game->map_row * 64 + 40);
 	}
 }
