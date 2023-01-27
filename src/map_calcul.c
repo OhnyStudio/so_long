@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:26 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 09:42:28 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 10:03:54 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	calcul_number_row(char *map_file)
 		if (temp)
 			i++;
 	}
+	temp = NULL;
 	free (temp);
 	close(fd);
 	return (i);
@@ -73,6 +74,7 @@ void	calcul_wall(char *map_file, t_game *game)
 		}
 		cpt[0]++;
 	}
+	temp = NULL;
 	game->map_wall = cpt[2];
 	free (temp);
 	close(fd);
@@ -100,6 +102,7 @@ void	calcul_floor(char *map_file, t_game *game)
 		}
 		cpt[0]++;
 	}
+	temp = NULL;
 	game->map_floor = cpt[2];
 	free (temp);
 	close(fd);

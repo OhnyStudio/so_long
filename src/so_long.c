@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:00:05 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/25 15:20:35 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 10:27:16 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,11 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (check_map(argv[1], &game) != 0)
-		{
 			render_game(&game);
-		}
 		else
-		{
 			ft_putstr_fd("Error\nMap invalide ou introuvable!", 1);
-		}
 	}
 	else
-	{
 		ft_putstr_fd("Error\nMauvais parametres!", 1);
-	}
+	return (0);
 }
