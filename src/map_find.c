@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:33 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 13:04:58 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 13:21:49 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	find_collectible(char *map_file, t_game *game)
 			cpt[1]++;
 		}
 		cpt[0]++;
-		free (temp);	
+		free(temp);
 	}
 	close(fd);
 }
@@ -64,7 +64,7 @@ void	find_player(char *map_file, t_game *game)
 			j++;
 		}
 		i++;
-		free (temp);	
+		free(temp);
 	}
 	close(fd);
 }
@@ -93,7 +93,7 @@ void	find_exit(char *map_file, t_game *game)
 			j++;
 		}
 		i++;
-		free (temp);
+		free(temp);
 	}
 	close(fd);
 }
