@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:00:05 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 10:27:16 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 10:52:48 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_putstr_fd("Error\nMauvais parametres!", 1);
+	free_game(&game);
 	return (0);
 }

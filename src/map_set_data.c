@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:59 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 09:43:00 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 13:08:42 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	set_map(char *map_file, t_game *game)
 		i++;
 	}
 	game->maps[i] = NULL;
-	temp = NULL;
-	free (temp);
 	close(fd);
 }
 

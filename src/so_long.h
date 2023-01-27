@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 10:29:10 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 10:52:28 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,5 @@ void	calcul_wall(char *map_file, t_game *game);
 void	calcul_floor(char *map_file, t_game *game);
 void	find_collectible(char *map_file, t_game *game);
 void	check_all_direction(t_game *game, int i, int j);
+void	free_game(t_game *game);
 #endif

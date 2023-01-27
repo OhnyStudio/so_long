@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:30:47 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/27 09:42:52 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 12:40:10 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	set_player_info(t_game *game)
 {
+	char	*temp;
+
 	game->txt_collect = mlx_new_image(game->mlx, 20, 180);
 	game->txt_collect_count = mlx_new_image(game->mlx, 20, 180);
 	game->txt_move = mlx_new_image(game->mlx, 20, 180);
@@ -22,10 +24,14 @@ static void	set_player_info(t_game *game)
 			"Player movement: ", 10, game->map_row * 64);
 	game->txt_collect = mlx_put_string(game->mlx,
 			"Collectible: ", 10, game->map_row * 64 + 20);
+	temp = ft_itoa(game->player_move);
 	game->txt_collect_count = mlx_put_string(game->mlx,
-			ft_itoa(game->player_move), 200, game->map_row * 64);
+			temp, 200, game->map_row * 64);
+	free(temp);
+	temp = ft_itoa(game->map_collectible);
 	game->txt_move_count = mlx_put_string(game->mlx,
-			ft_itoa(game->map_collectible), 200, game->map_row * 64 + 20);
+			temp, 200, game->map_row * 64 + 20);
+	free(temp);
 }
 
 void	print_player_move(t_game *game)

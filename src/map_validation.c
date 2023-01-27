@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/27 10:00:54 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/01/27 13:09:43 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,8 @@ static int	check_can_read_map(char *map_file, t_game *game)
 				return (0);
 			i++;
 		}
+		free(temp);
 	}
-	temp = NULL;
-	free (temp);
 	close(fd);
 	return (1);
 }
