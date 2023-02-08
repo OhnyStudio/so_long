@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:49:34 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 14:52:34 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/02/08 15:03:19 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,10 @@ static void	free_array(t_game *game)
 	free (game->maps);
 }
 
-void	free_game(t_game *game)
+void	free_game(t_game *game, int isRender)
 {
-	delete_textures(game);
+	if (isRender != 0)
+		delete_textures(game);
 	delete_images(game);
 	free_array(game);
 }

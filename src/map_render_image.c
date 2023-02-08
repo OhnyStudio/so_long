@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:44:05 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/02/03 11:04:06 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/02/08 14:59:00 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ int	render_game(t_game *game)
 	mlx_loop_hook(game->mlx, &hook, (void *)game);
 	mlx_loop(game->mlx);
 	mlx_terminate(game->mlx);
-	free_game(game);
+	free_game(game, 1);
 	return (EXIT_SUCCESS);
 }

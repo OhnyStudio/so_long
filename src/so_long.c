@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:00:05 by jsavard           #+#    #+#             */
-/*   Updated: 2023/02/03 11:06:28 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/02/08 14:58:31 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 		else
 		{
 			ft_putstr_fd("Error\nMap invalide ou introuvable!", 1);
-			free_game(&game);
+			free_game(&game, 0);
 		}
 	}
 	else
