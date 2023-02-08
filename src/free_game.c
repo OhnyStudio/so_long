@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:49:34 by jsavard           #+#    #+#             */
-/*   Updated: 2023/02/08 15:03:19 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/02/08 15:21:22 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,8 @@ static void	delete_textures(t_game *game)
 
 static void	delete_images(t_game *game)
 {
-	int	i;
-
-	i = 0;
-	while (game->floor[i])
-	{
-		mlx_delete_image(game->mlx, game->floor[i]);
-		i++;
-	}
 	free(game->floor);
-	i = 0;
-	while (game->collect[i])
-	{
-		mlx_delete_image(game->mlx, game->collect[i]);
-		i++;
-	}
 	free(game->collect);
-	i = 0;
-	while (game->wall[i])
-	{
-		mlx_delete_image(game->mlx, game->wall[i]);
-		i++;
-	}
 	free(game->wall);
 }
 
