@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:26 by jsavard           #+#    #+#             */
-/*   Updated: 2023/03/06 13:53:31 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 16:09:33 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,15 +105,4 @@ void	calcul_floor(char *map_file, t_game *game)
 	}
 	game->map_floor = cpt[2];
 	close(fd);
-}
-
-void	calcul_move(t_game *game)
-{
-	if (game->second_move == 0)
-		game->second_move = 1;
-	else
-	{
-		game->next_move = mlx_get_time() + 1;
-		game->second_move = 0;
-	}
 }

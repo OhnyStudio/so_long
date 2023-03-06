@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:43:47 by jsavard           #+#    #+#             */
-/*   Updated: 2023/02/08 15:09:13 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 16:25:08 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,23 @@ int	player_can_finish(t_game *game)
 	return (0);
 }
 
-void	collect_item(t_game *game)
+void	collect_item(t_game *game, int dir)
 {
+	if (dir == 0)
+		game->player_row--;
+	else if (dir == 1)
+		game->player_row++;
+	else if (dir == 2)
+		game->player_col--;
+	else if (dir == 3)
+		game->player_col++;
 	if (game->maps[game->player_row][game->player_col] == 'C')
 	{
 		game->map_collectible--;
 		game->maps[game->player_row][game->player_col] = '0';
 		delete_db_image(game);
 	}
+	print_player_move(game);
 }
 
 void	can_exit(t_game *game)

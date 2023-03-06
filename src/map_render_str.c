@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:30:47 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/01/27 13:22:01 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 16:20:37 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ static void	set_player_info(t_game *game)
 
 void	print_player_move(t_game *game)
 {
+	game->player_move++;
+	can_exit(game);
+	game->next_move += 0.4;
 	if (game->player_move == 0)
 	{
 		set_player_info(game);

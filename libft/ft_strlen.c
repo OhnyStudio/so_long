@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:43:50 by jsavard           #+#    #+#             */
-/*   Updated: 2023/03/06 14:23:14 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 14:43:06 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlen(const char *s)
 
 	i = 0;
 	if (s == NULL)
-		return (s);
+		return (0);
 	while (s[i])
 	{
 		i++;
