@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/03/06 10:30:48 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 12:29:34 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 typedef struct s_game
 {
 	int				second_move;
+	int				game_state;
 	int				game_finish;
 	int				map_row;
 	int				map_col;

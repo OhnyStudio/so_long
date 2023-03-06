@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:33 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 13:21:49 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 14:06:33 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ void	find_collectible(char *map_file, t_game *game)
 			if (temp[cpt[1]] == 'C')
 			{
 				game->collect_col[cpt[2]] = cpt[1];
-				game->collect_row[cpt[2]] = cpt[0];
-				cpt[2]++;
+				game->collect_row[cpt[2]++] = cpt[0];
 			}
 			cpt[1]++;
 		}
@@ -39,6 +38,7 @@ void	find_collectible(char *map_file, t_game *game)
 		free(temp);
 	}
 	close(fd);
+	game->game_state++;
 }
 
 void	find_player(char *map_file, t_game *game)
@@ -116,8 +116,7 @@ void	find_wall(char *map_file, t_game *game)
 			if (temp[cpt[1]] == '1')
 			{
 				game->wall_col[cpt[2]] = cpt[1];
-				game->wall_row[cpt[2]] = cpt[0];
-				cpt[2]++;
+				game->wall_row[cpt[2]++] = cpt[0];
 			}
 			cpt[1]++;
 		}
@@ -125,6 +124,7 @@ void	find_wall(char *map_file, t_game *game)
 		free (temp);
 	}
 	close(fd);
+	game->game_state++;
 }
 
 void	find_floor(char *map_file, t_game *game)
@@ -145,8 +145,7 @@ void	find_floor(char *map_file, t_game *game)
 				|| temp[cpt[1]] == 'P' || temp[cpt[1]] == 'E')
 			{
 				game->floor_col[cpt[2]] = cpt[1];
-				game->floor_row[cpt[2]] = cpt[0];
-				cpt[2]++;
+				game->floor_row[cpt[2]++] = cpt[0];
 			}
 			cpt[1]++;
 		}
@@ -154,4 +153,5 @@ void	find_floor(char *map_file, t_game *game)
 		free (temp);
 	}
 	close(cpt[3]);
+	game->game_state++;
 }

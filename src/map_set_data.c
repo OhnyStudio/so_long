@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:59 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 15:09:23 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 13:58:34 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	set_map(char *map_file, t_game *game)
 		free(temp);
 	}
 	close(fd);
+	game->game_state++;
 }
 
 void	set_game_size(t_game *game)
@@ -52,6 +53,7 @@ void	set_game_size(t_game *game)
 	i = 0;
 	while (i < game->map_row)
 		game->value_map[i++] = ft_calloc(sizeof(int), game->map_col + 1);
+	game->game_state++;
 }
 
 void	set_direction(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/02/03 11:05:33 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 14:38:34 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,10 @@ static int	check_can_read_map(char *map_file, t_game *game)
 			if (i == 0)
 				game->map_col = ft_strlen(temp) - 1;
 			if (validate_rows(temp, i, game) == 0)
+			{
+				free(temp);
 				return (0);
+			}
 			i++;
 		}
 		free(temp);
