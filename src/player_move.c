@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:31:19 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 11:44:02 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 10:31:36 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,21 +94,21 @@ void	hook(void *params)
 	if (mlx_is_key_down(game->mlx, MLX_KEY_W) && can_move_up(game))
 	{
 		game->player->instances[0].y -= 64;
-		game->next_move = mlx_get_time() + 1;
+		calcul_move(game);
 	}
 	if (mlx_is_key_down(game->mlx, MLX_KEY_S) && can_move_down(game))
 	{
 		game->player->instances[0].y += 64;
-		game->next_move = mlx_get_time() + 1;
+		calcul_move(game);
 	}
 	if (mlx_is_key_down(game->mlx, MLX_KEY_A) && can_move_left(game))
 	{
 		game->player->instances[0].x -= 64;
-		game->next_move = mlx_get_time() + 1;
+		calcul_move(game);
 	}
 	if (mlx_is_key_down(game->mlx, MLX_KEY_D) && can_move_right(game))
 	{	
 		game->player->instances[0].x += 64;
-		game->next_move = mlx_get_time() + 1;
+		calcul_move(game);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:32:25 by jsavard           #+#    #+#             */
-/*   Updated: 2023/02/08 14:57:57 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/06 10:30:48 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 
 typedef struct s_game
 {
+	int				second_move;
 	int				game_finish;
 	int				map_row;
 	int				map_col;
@@ -65,28 +66,38 @@ typedef struct s_game
 	mlx_texture_t	*floor_texture;
 }	t_game;
 
-char	*get_next_line(int fd);
-int		render_game(t_game *game);
-int		player_can_finish(t_game *game);
+//Free Game
+void	free_game(t_game *game, int isRender);
+//Map Calcul
 int		calcul_number_row(char *map_file);
-int		check_map(char *map_file, t_game *game);
-int		check_path(char *map_file, t_game *game);
 int		calcul_count_pos(t_game *game, int i, int j);
-void	hook(void *params);
-void	can_exit(t_game *game);
-void	collect_item(t_game *game);
-void	set_game_size(t_game *game);
-void	set_direction(t_game *game);
-void	print_value_map(t_game *game);
-void	print_player_move(t_game *game);
-void	set_map(char *map_file, t_game *game);
+void	calcul_move(t_game *game);
+void	calcul_wall(char *map_file, t_game *game);
+void	calcul_floor(char *map_file, t_game *game);
+//Map find
 void	find_exit(char *map_file, t_game *game);
 void	find_wall(char *map_file, t_game *game);
 void	find_floor(char *map_file, t_game *game);
 void	find_player(char *map_file, t_game *game);
-void	calcul_wall(char *map_file, t_game *game);
-void	calcul_floor(char *map_file, t_game *game);
 void	find_collectible(char *map_file, t_game *game);
+//Map get next line
+char	*get_next_line(int fd);
+//Map render image
+int		render_game(t_game *game);
+//Map render str
+void	print_player_move(t_game *game);
+//Map Set Data
+void	set_direction(t_game *game);
+void	set_game_size(t_game *game);
+void	set_map(char *map_file, t_game *game);
+//Map Valiadtion Direction
 void	check_all_direction(t_game *game, int i, int j);
-void	free_game(t_game *game, int isRender);
+//Map Valiadtion
+int		check_map(char *map_file, t_game *game);
+//Player Move
+void	hook(void *params);
+//Player Validation Move
+int		player_can_finish(t_game *game);
+void	can_exit(t_game *game);
+void	collect_item(t_game *game);
 #endif
