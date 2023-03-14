@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:43:21 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 09:43:22 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:37:03 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 static int	have_2(t_game *game, int i, int j)
 {

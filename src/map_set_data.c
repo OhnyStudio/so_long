@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:59 by jsavard           #+#    #+#             */
-/*   Updated: 2023/03/06 13:58:34 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:37:01 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	set_map(char *map_file, t_game *game)
 {

@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:49:34 by jsavard           #+#    #+#             */
-/*   Updated: 2023/03/06 14:27:21 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:36:29 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 static void	delete_textures(t_game *game)
 {

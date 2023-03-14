@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:30:47 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/03/06 16:20:37 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:36:53 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 static void	set_player_info(t_game *game)
 {
@@ -38,7 +38,7 @@ void	print_player_move(t_game *game)
 {
 	game->player_move++;
 	can_exit(game);
-	game->next_move += 0.4;
+	game->next_move = mlx_get_time() + 0.35;
 	if (game->player_move == 0)
 	{
 		set_player_info(game);

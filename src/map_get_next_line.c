@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:07:18 by jsavard           #+#    #+#             */
-/*   Updated: 2023/01/27 09:42:42 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:36:45 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 static char	*ft_save_diff(char *line)
 {

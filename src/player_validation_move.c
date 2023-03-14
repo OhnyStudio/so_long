@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:43:47 by jsavard           #+#    #+#             */
-/*   Updated: 2023/03/13 11:30:20 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:37:13 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 static void	delete_db_image(t_game	*game)
 {

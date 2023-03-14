@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 09:42:26 by jsavard           #+#    #+#             */
-/*   Updated: 2023/03/06 16:09:33 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:36:35 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 int	calcul_number_row(char *map_file)
 {

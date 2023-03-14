@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:44:05 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/03/06 15:55:00 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:36:12 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 static void	set_texture(t_game *game)
 {

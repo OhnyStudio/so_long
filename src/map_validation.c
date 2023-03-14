@@ -6,11 +6,11 @@
 /*   By: jsavard <jsavard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 18:02:26 by johnysavard       #+#    #+#             */
-/*   Updated: 2023/03/06 14:38:34 by jsavard          ###   ########.fr       */
+/*   Updated: 2023/03/14 14:37:07 by jsavard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 static int	validate_middle_rows(char *line, t_game *game)
 {
